@@ -71,9 +71,9 @@ runs:
       uses: actions/cache@v4
       with:
         path: ${{ steps.flutter-action.outputs.PUB-CACHE-PATH }}
-        key: ${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}-${{ hashFiles('**/pubspec.lock') }}
+        key: ${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}
         restore-keys: |
-          ${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}-${{ hashFiles('**/pubspec.lock') }}
+          ${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}
           ${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}
     - run: $GITHUB_ACTION_PATH/setup.sh -c '${{ steps.flutter-action.outputs.CACHE-PATH }}' -n '${{ steps.flutter-action.outputs.VERSION }}' -a '${{ steps.flutter-action.outputs.ARCHITECTURE }}' ${{ steps.flutter-action.outputs.CHANNEL }}
       shell: bash
